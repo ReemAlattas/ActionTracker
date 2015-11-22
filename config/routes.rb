@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   get 'sessions/failure'
 
   get 'welcome/index'
-  root 'welcome#index'
+  root 'plans#index'
 
   #devise_for :users
   resources :plans
