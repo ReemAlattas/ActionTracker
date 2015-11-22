@@ -8,7 +8,13 @@ Rails.application.routes.draw do
   get 'welcome/index'
   root 'welcome#index'
 
-  devise_for :users
+  #devise_for :users
   resources :plans
+
+  get   '/login', :to => 'sessions#new', :as => :login
+  match '/auth/:provider/callback', :to => 'sessions#create', via: [:get, :post]
+  match '/auth/failure', :to => 'sessions#failure', via: [:get, :post]
+
+  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
 
 end
