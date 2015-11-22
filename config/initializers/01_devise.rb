@@ -1,6 +1,6 @@
 Devise.setup do |config|
 
-  config.mailer_sender = 'please-change-me-at-config-initializers-devise@example.com'
+  config.mailer_sender = 'ralattas@live.com'
   require 'devise/orm/active_record'
 
   config.case_insensitive_keys = [:email]
@@ -13,6 +13,6 @@ Devise.setup do |config|
   config.reset_password_within = 6.hours
   config.sign_out_via = :delete
 
-  config.omniauth :facebook, "902301929865813", "a103fa8ee8746214e8f79ded12c556d7"
+  #config.omniauth :facebook, "902301929865813", "a103fa8ee8746214e8f79ded12c556d7"
 
 end
