@@ -69,6 +69,6 @@ class KpisController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def kpi_params
-      params[:kpi]
+      params.require(:kpi).permit(:description, :responsibility, :milestone)
     end
 end

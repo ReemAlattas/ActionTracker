@@ -12,6 +12,9 @@
   <tbody>
     <% @kpis.each do |kpi| %>
       <tr>
+        <td><%= kpi.description %></td>
+        <td><%= kpi.responsibility %></td>
+        <td><%= kpi.milestone %></td>
         <td><%= link_to 'Show', kpi %></td>
         <td><%= link_to 'Edit', edit_kpi_path(kpi) %></td>
         <td><%= link_to 'Destroy', kpi, method: :delete, data: { confirm: 'Are you sure?' } %></td>
