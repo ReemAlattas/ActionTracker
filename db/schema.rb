@@ -11,10 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151121214408) do
+ActiveRecord::Schema.define(version: 20151122191025) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "actions", force: :cascade do |t|
+    t.text     "description"
+    t.string   "target"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
 
   create_table "authorizations", force: :cascade do |t|
     t.string   "provider"
@@ -38,6 +45,14 @@ ActiveRecord::Schema.define(version: 20151121214408) do
     t.string   "logo_content_type"
     t.integer  "logo_file_size"
     t.datetime "logo_updated_at"
+  end
+
+  create_table "kpis", force: :cascade do |t|
+    t.text     "description"
+    t.string   "responsibility"
+    t.datetime "milestone"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
   end
 
   create_table "plans", force: :cascade do |t|
