@@ -1,6 +1,6 @@
-class CreateActions < ActiveRecord::Migration
+class CreateKactions < ActiveRecord::Migration
   def change
-    create_table :actions do |t|
+    create_table :kactions do |t|
       t.belongs_to :kpi, index: true
       t.text :description
       t.string :target
