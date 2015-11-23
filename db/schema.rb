@@ -16,13 +16,6 @@ ActiveRecord::Schema.define(version: 20151123023637) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "kactions", force: :cascade do |t|
-    t.text     "description"
-    t.string   "target"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-  end
-
   create_table "authorizations", force: :cascade do |t|
     t.string   "provider"
     t.string   "uid"
@@ -45,6 +38,13 @@ ActiveRecord::Schema.define(version: 20151123023637) do
     t.string   "logo_content_type"
     t.integer  "logo_file_size"
     t.datetime "logo_updated_at"
+  end
+
+  create_table "kactions", force: :cascade do |t|
+    t.text     "description"
+    t.string   "target"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "kpis", force: :cascade do |t|

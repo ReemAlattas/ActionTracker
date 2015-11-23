@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+
+  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
+
   get 'sessions/new'
 
   get 'sessions/create'
@@ -17,6 +20,6 @@ Rails.application.routes.draw do
   match '/auth/:provider/callback', :to => 'sessions#create', via: [:get, :post]
   match '/auth/failure', :to => 'sessions#failure', via: [:get, :post]
 
-  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
+
 
 end
