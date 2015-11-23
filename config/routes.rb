@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   #devise_for :users
   resources :plans
   resources :kpis
-  resources :kactions
+  resources :actions
 
   get   '/login', :to => 'sessions#new', :as => :login
   match '/auth/:provider/callback', :to => 'sessions#create', via: [:get, :post]

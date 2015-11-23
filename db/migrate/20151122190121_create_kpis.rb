@@ -6,7 +6,7 @@ class CreateKpis < ActiveRecord::Migration
       t.string :responsibility
       t.datetime :milestone
       t.timestamps null: false
-      has_many :kactions
+      has_many :actions
     end
   end
 end
